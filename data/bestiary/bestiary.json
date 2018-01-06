@@ -1,4 +1,4 @@
-
+[
   {
     "name": "mario",
     "image": "mario.png",
@@ -37,7 +37,7 @@
     "active": false,
     "collide": true,
     "legend": "t",
-    "updateid": -1
+    "updateid": 0
   },
   {
     "name": "torch",
@@ -47,6 +47,6 @@
     "active": false,
     "collide": false,
     "legend": "l",
-    "updateid": -1
+    "updateid": 0
   }
 ]

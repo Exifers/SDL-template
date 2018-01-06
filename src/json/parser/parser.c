@@ -195,7 +195,7 @@ static void *parse_value(char *addr, size_t len, enum data_type *type)
     *type = NUL;
     return parse_token(addr, len, "null");
   }
-  errx(1, "Incorrect format: first character is incorrect");
+  errx(1, "Incorrect format: first character '%c' is incorrect", addr[index]);
   return NULL;
 }
 

@@ -4,6 +4,12 @@
 #include <stdlib.h>
 #include <err.h>
 
+#include "llist/llist.h"
+#include "bestiary/bestiary.h"
+#include "maps/maps.h"
+#include "json/parser/parser.h"
+#include "json/display/display.h"
+
 SDL_Window *get_window(void)
 {
   static SDL_Window *window;
@@ -38,6 +44,11 @@ int main(void)
 
   SDL_Window *window = get_window();
   SDL_Renderer *ren = get_renderer();
+
+  struct llist *bestiary = load_bestiary();
+  struct llist *maps = load_maps();
+  
+  print_data(bestiary, LIST);
  
   SDL_Surface *surface = IMG_Load("data/img/mario.png");
   if (!surface)
@@ -64,6 +75,9 @@ int main(void)
     SDL_RenderCopy(ren, texture, NULL, &rect);
     SDL_RenderPresent(ren);
   }
+
+  free_bestiary(bestiary);
+  free_maps(maps);
 
   SDL_DestroyWindow(window);
 
