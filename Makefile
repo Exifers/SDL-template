@@ -8,7 +8,7 @@ LDFLAGS = $(shell sdl2-config --libs) -lSDL2_image
 
 debug : CFLAGS += -g
 
-src := $(shell find $(srcdir) -name *.c)
+src := $(shell find $(srcdir) -name "*.c")
 obj := $(src:%.c=%.o)
 
 all: $(obj)
